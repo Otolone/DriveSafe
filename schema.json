@@ -1,0 +1,40 @@
+{
+    "users": {
+        "_id": "ObjectId", 
+        "username": "string",
+        "email": "string",
+        "profilePicture": "string",
+        "createdAt": "date",
+        "updatedAt": "date"
+    },
+    "posts": {
+        "_id": "ObjectId",
+        "userId": "ObjectId",
+        "content": "string",
+        "media": ["string"],
+        "createdAt": "date",
+        "updatedAt": "date",
+        "likes": ["ObjectId"],
+        "commentID": ["ObjectId"]
+    },
+    "comments": {
+        "_id": "ObjectId",
+        "postId": "ObjectId",
+        "userId": "ObjectId",
+        "comment": "string",
+        "createdAt": "date"
+    },
+    "notifications": {
+        "_id": "ObjectId",
+        "userId": "ObjectId",
+        "type": "string",
+        "message": "string",
+        "isRead": "boolean",
+        "createdAt": "date"
+    },
+    "movies": {
+        "_id": "ObjectId",
+         "title": "string"
+    }
+}
+
