@@ -35,7 +35,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;;
+const port = process.env.PORT;
 
 if (!uri) {
   console.error(
@@ -52,7 +53,6 @@ mongoose
 
 
 //post
-
 app.post('/postUser', postUser);
 app.post('/postPost', postPost);
 app.post('/postComment', postComment);
@@ -72,7 +72,7 @@ app.get('/getComments', getComments);
 app.get('/getuserbyId/:id', findUserById);
 app.get('/getPostbyId/:id', getPostById);
 
-app.listen(uri || 'http://192.168.42.79:5001', () =>     //8000 process.env.PORT
+app.listen(port || 5001, () =>     //8000
   console.log('Server running on port 5001'),
 );
 
@@ -93,4 +93,3 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
-//Addded to trigger build
