@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const postUser = async (req, res) => {
   try {
     const newUser = new User(req.body);
-    //newUser._id = new mongoose.Types.ObjectId();
+    newUser._id = new mongoose.Types.ObjectId();
     newUser.profilePicture = '';
     newUser.createdAt = Date();
     newUser.updatedAt = Date();
