@@ -25,6 +25,8 @@ var {
 } = require('./routes/post');
 var {postComment, getComments, updateCommentById} = require('./routes/comment');
 
+var {home} = require('./routes/home');
+
 var mongoose = require('mongoose');
 
 var cors = require('cors');
@@ -35,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-const uri = process.env.MONGODB_URI;;
+const uri = process.env.MONGODB_URI;
 const port = process.env.PORT;
 
 if (!uri) {
@@ -66,6 +68,7 @@ app.patch('/updateUserProfilePicture/:id',updateUserProfilePicture)
 
 
 //get
+app.get('/', home);
 app.get('/getPosts', getPosts);
 app.get('/getComments', getComments);
 
