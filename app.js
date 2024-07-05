@@ -1,12 +1,20 @@
 require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
+
 var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
+//configure multer for file upload
+
 //import route
-var {postUser, updateUserById, findUserById} = require('./routes/users');
+var {
+  postUser, 
+  updateUserById, 
+  findUserById, 
+  updateUserProfilePicture
+} = require('./routes/users');
 
 var {postComment, updateCommentById} = require('./routes/comment');
 var {
@@ -41,17 +49,20 @@ mongoose
   .then(() => console.log('DB connected'))
   .catch(err => console.log('DB connection error: ', err));
 
-// middleware
-//end point to get
+
+
 //post
 app.post('/postUser', postUser);
 app.post('/postPost', postPost);
 app.post('/postComment', postComment);
 
 //update
-app.put('/users/:id', updateUserById);
-app.put('/comments/:d', updateCommentById);
-app.put('/updatePostById/:d', updatePostById);
+app.put('/updateUserById/:id', updateUserById);
+app.put('/comments/:id', updateCommentById);
+app.put('/updatePostById/:id', updatePostById); 
+
+app.patch('/updateUserProfilePicture/:id',updateUserProfilePicture)
+
 
 //get
 app.get('/getPosts', getPosts);
@@ -60,8 +71,8 @@ app.get('/getComments', getComments);
 app.get('/getuserbyId/:id', findUserById);
 app.get('/getPostbyId/:id', getPostById);
 
-app.listen(process.env.PORT || 8000, () =>
-  console.log('Server running on port 8000'),
+app.listen(process.env.PORT || 5001, () =>     //8000
+  console.log('Server running on port 5001'),
 );
 
 // catch 404 and forward to error handler

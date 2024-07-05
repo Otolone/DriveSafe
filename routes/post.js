@@ -25,7 +25,7 @@ const getPostById = async (req, res) => {
   
   try {
     const posts = await Post.findById(req.params.id);
-    res.json(posts);
+    res.status(201).json(posts);
   } catch (error) {
     console.error('Error fetching posts:', error);
     res.status(500).send('Internal Server Error');
