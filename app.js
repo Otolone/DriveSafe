@@ -25,7 +25,7 @@ var {
 } = require('./routes/post');
 var {postComment, getComments, updateCommentById} = require('./routes/comment');
 
-var {home} = require('./routes/home');
+//var {home} = require('./routes/home');
 
 var mongoose = require('mongoose');
 
@@ -68,7 +68,9 @@ app.patch('/updateUserProfilePicture/:id',updateUserProfilePicture)
 
 
 //get
-app.get('/', home);
+app.get('/', (req, res) => {
+  res.send('DriveSafe App')
+})
 app.get('/getPosts', getPosts);
 app.get('/getComments', getComments);
 
