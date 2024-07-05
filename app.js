@@ -6,7 +6,7 @@ var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
-var bodyParser = require('bodyParser');
+var bodyParser = require('body-parser');
 //configure multer for file upload
 
 //import route
