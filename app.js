@@ -66,7 +66,6 @@ app.patch('/updateUserProfilePicture/:id',updateUserProfilePicture)
 
 
 //get
-app.get('/','https://drivesafe-b191296eaba2.herokuapp.com');
 app.get('/getPosts', getPosts);
 app.get('/getComments', getComments);
 
