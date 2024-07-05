@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const postPost = async (req, res) => {
   try {
     const newPost = new Post(req.body);
-    newPost._id = new mongoose.Types.ObjectId();
+   // newPost._id = new mongoose.Types.ObjectId();
     await newPost.save();
     res.status(201).json(newPost);
   } catch (error) {

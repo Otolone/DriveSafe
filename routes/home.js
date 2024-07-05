@@ -1,6 +1,6 @@
-const home = () => {
+const home = (req, res) => {
     const html = '<html>' + 'Drive Safe App' + '</html>';
-    return  res.send(html);// json(html);
+    return  res.send();// json(html);
 
 }
 

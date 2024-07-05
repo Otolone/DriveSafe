@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const postComment = async (req, res) => {
   try {
     const newComment = new Comment(req.body);
-    newComment._id = new mongoose.Types.ObjectId();
+    //newComment._id = new mongoose.Types.ObjectId();
     newComment.createdAt = Date();
     await newComment.save();
     res.status(201).json(newComment);
