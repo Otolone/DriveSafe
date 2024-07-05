@@ -1,6 +1,6 @@
 const home = () => {
     const html = '<html>' + 'Drive Safe App' + '</html>';
-    return  res.json(html);
+    return  res.send(html);// json(html);
 
 }
 
