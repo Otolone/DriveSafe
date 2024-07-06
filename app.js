@@ -14,6 +14,7 @@ var {
   postUser, 
   updateUserById, 
   findUserById, 
+  findUserByEmail,
   updateUserProfilePicture
 } = require('./routes/users');
 
@@ -78,6 +79,7 @@ app.get('/getPosts', getPosts);
 app.get('/getComments', getComments);
 
 app.get('/getuserbyId/:id', findUserById);
+app.get('/finduserbyEmail/:email', findUserByEmail);
 app.get('/getPostbyId/:id', getPostById);
 
 app.listen(port || 5001, () =>     //8000
