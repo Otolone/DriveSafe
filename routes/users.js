@@ -47,7 +47,7 @@ const updateUserProfilePicture = async (req, res) => {
 };
 const findUserById = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
+    const user = await User.findOne(req.params.id);
    if (!user) {
       return res.status(404).send('The user with the given ID was not found.');
     }
