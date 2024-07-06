@@ -47,7 +47,19 @@ const updateUserProfilePicture = async (req, res) => {
 };
 const findUserById = async (req, res) => {
   try {
-    const user = await User.findOne(req.params.id);
+    const user = await User.findById(req.params.id);
+   if (!user) {
+      return res.status(404).send('The user with the given ID was not found.');
+    }
+    res.status(201).send(user);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+const findUserByEmail = async (req, res) => {
+  try {
+   const email = req.params.email;
+    const user = await User.findOne({email: email});
    if (!user) {
       return res.status(404).send('The user with the given ID was not found.');
     }
