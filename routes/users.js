@@ -69,4 +69,4 @@ const findUserByEmail = async (req, res) => {
   }
 };
 
-module.exports = {postUser, updateUserById, findUserById, updateUserProfilePicture };
+module.exports = {postUser, updateUserById, findUserById, updateUserProfilePicture,findUserByEmail };
