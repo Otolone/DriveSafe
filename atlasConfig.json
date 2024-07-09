@@ -1,0 +1,9 @@
+{
+    "appId": "application-0-wgiywbc",
+    "appUrl": "https://services.cloud.mongodb.com/groups/6661495f8b54ae29af9a1e2a/apps/66614ec74283042211d3eb7c",
+    "baseUrl": "https://services.cloud.mongodb.com",
+    "clientApiBaseUrl": "https://eu-central-1.aws.services.cloud.mongodb.com",
+    "dataApiBaseUrl": "https://eu-central-1.aws.data.mongodb-api.com",
+    "dataExplorerLink": "https://cloud.mongodb.com/links/6661495f8b54ae29af9a1e2a/explorer/Cluster0/database/collection/find",
+    "dataSourceName": "mongodb-atlas"
+}

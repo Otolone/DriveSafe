@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DriveSafe</string>
+    
+<string name="facebook_app_id">845542890935823</string>
+<string name="fb_login_protocol_scheme">fb845542890935823</string>
+<string name="facebook_client_token">4e62e627edd6d9efc98f1caacf1711be</string>
+
 </resources>
